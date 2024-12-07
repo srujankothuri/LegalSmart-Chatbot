@@ -8,7 +8,7 @@
 ## About The Project
 LegalSmart Chatbot is a Retrieval-Augmented Generation (RAG)-based generative AI attorney chatbot, designed to assist users by leveraging data from the Indian Penal Code (IPC), the Bharatiya Nyaya Sanhita, and the Constitution of India. Developed using Streamlit, LangChain, and the TogetherAI API for its language model, this tool empowers individuals to understand and exercise their legal rights effectively.
 
-The chatbot provides accurate and contextually relevant responses to legal queries in alignment with Indian laws. Whether you are new to understanding your rights or seeking justice under the IPC, LegalSmart Chatbot is tailored to guide you comprehensively.
+The chatbot provides accurate and contextually relevant responses to legal queries based on the Indian Penal Code (IPC), the Bharatiya Nyaya Sanhita, and the Constitution of India. Whether you are new to understanding your rights, seeking justice under the IPC, or exploring constitutional provisions, LegalSmart Chatbot is tailored to guide you comprehensively across these legal domains.
 <br>
 
 
