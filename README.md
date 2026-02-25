@@ -1,41 +1,122 @@
-<h1 align="center">LegalSmart Chatbot</h1>
-
+# LegalSmart Chatbot
 
 <p align="center">
-<img src="https://github.com/srujankothuri/LegalSmart-Chatbot/blob/e896298cd49582cc06194d088f62dd993409367a/chatbot_legal.jpeg"/>
+  <img src="chatbot_legal.jpeg" alt="LegalSmart Chatbot banner" width="900"/>
 </p>
 
-## About The Project
-LegalSmart Chatbot is a Retrieval-Augmented Generation (RAG)-based generative AI attorney chatbot, designed to assist users by leveraging data from the Indian Penal Code (IPC), the Bharatiya Nyaya Sanhita, and the Constitution of India. Developed using Streamlit, LangChain, and the TogetherAI API for its language model, this tool empowers individuals to understand and exercise their legal rights effectively.
+LegalSmart Chatbot is a Retrieval-Augmented Generation (RAG) legal assistant focused on Indian law. It answers user questions using context retrieved from the **Indian Penal Code (IPC)**, **Bharatiya Nyaya Sanhita (BNS)**, and the **Constitution of India**.
 
-The chatbot provides accurate and contextually relevant responses to legal queries based on the Indian Penal Code (IPC), the Bharatiya Nyaya Sanhita, and the Constitution of India. Whether you are new to understanding your rights, seeking justice under the IPC, or exploring constitutional provisions, LegalSmart Chatbot is tailored to guide you comprehensively across these legal domains.
-<br>
+The project is implemented with **Streamlit**, **LangChain**, **FAISS**, **Hugging Face embeddings**, and **Together AI-hosted LLMs**.
 
+## Research Publication
 
+This project is part of our published research work:
 
+- **Springer (book chapter):** https://link.springer.com/chapter/10.1007/978-3-032-12827-0_7
 
+## Repository Description (for GitHub)
 
+> A RAG-based legal assistant for Indian law that uses FAISS retrieval over IPC, BNS, and Constitution documents to generate grounded answers via Streamlit + LangChain.
 
+## Suggested GitHub Topics
+
+Use these topics in your repository settings to improve discoverability:
+
+- `rag`
+- `legal-ai`
+- `chatbot`
+- `streamlit`
+- `langchain`
+- `faiss`
+- `llm`
+- `retrieval-augmented-generation`
+- `indian-law`
+- `together-ai`
+- `huggingface`
+- `python`
+
+## Features
+
+- Grounded legal Q&A over IPC, BNS, and Constitutional text.
+- Conversational memory for multi-turn interactions.
+- Retrieval pipeline powered by FAISS vector search.
+- Streamlit-based chat interface for easy deployment.
+- Prompting strategy designed for both non-legal and legal-professional audiences.
+
+## Tech Stack
+
+- **App/UI:** Streamlit
+- **LLM Orchestration:** LangChain
+- **Vector Store:** FAISS
+- **Embeddings:** `nomic-ai/nomic-embed-text-v1` (Hugging Face)
+- **LLM Provider:** Together AI
+
+## Project Structure
+
+```text
+.
+├── app.py                  # Streamlit chat app
+├── Ingest.py               # Document ingestion + vector indexing
+├── requirements.txt        # Python dependencies
+├── data/                   # Source legal PDFs (IPC, BNS, Constitution)
+└── law_vector_db/          # Generated FAISS index files
+```
 
 ## Getting Started
 
-#### 1. Clone the repository:
-   - ```
-     git https://github.com/srujankothuri/LegalSmart-Chatbot.git
-     ```
-#### 2. Install necessary packages:
-   - ```
-     pip install -r requirements.txt
-     ```
-#### 3. Run the `ingest.py` file, preferably on kaggle or colab for faster embeddings processing and then download the `ipc_vector_db` from the output folder and save it locally.
-#### 4. Sign up with Together AI today and get $25 worth of free credit! 🎉 Whether you choose to use it for a short-term project or opt for a long-term commitment, Together AI offers cost-effective solutions compared to the OpenAI API. 🚀 You also have the flexibility to explore other Language Models (LLMs) or APIs if you prefer. For a comprehensive list of options, check out this link: [python.langchain.com/docs/integrations/llms](https://python.langchain.com/docs/integrations/llms) . Once signed up, seamlessly integrate Together AI into your Python environment by setting the API Key as an environment variable. 💻✨ 
-   - ```
-      os.environ["TOGETHER_API_KEY"] = "YOUR_TOGETHER_API_KEY"`
-     ```
-   - If you are going to host it in streamlit, huggingface or other...
-      - Save it in the secrets variable provided by the hosting with the name `TOGETHER_API_KEY` and key as `YOUR_TOGETHER_API_KEY`.
+### 1) Clone the repository
 
-#### 5. To run the `app.py` file, open the CMD Terminal and and type `streamlit run FULL_FILE_PATH_OF_APP.PY`.
+```bash
+git clone https://github.com/srujankothuri/LegalSmart-Chatbot.git
+cd LegalSmart-Chatbot
+```
+
+### 2) Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3) Build the vector database
+
+Run ingestion first (recommended on a machine with sufficient RAM/CPU):
+
+```bash
+python Ingest.py
+```
+
+This generates/updates the `law_vector_db` directory used at runtime.
+
+### 4) Configure API key
+
+Set your Together AI API key as an environment variable:
+
+```bash
+export TOGETHER_API_KEY="your_together_api_key"
+```
+
+> If deploying on Streamlit Cloud/Hugging Face Spaces, store `TOGETHER_API_KEY` in the platform's secrets settings.
+
+### 5) Run the app
+
+```bash
+streamlit run app.py
+```
+
+Then open the local URL shown in your terminal (typically `http://localhost:8501`).
+
+## Notes
+
+- This tool is for educational and informational purposes.
+- Responses may not be a substitute for professional legal advice.
+- Always verify critical legal decisions with a qualified legal practitioner.
+
+## Contributing
+
+Issues and pull requests are welcome. If you find bugs or want improvements, please open an issue first to discuss scope.
 
 ## Contact
-If you have any questions or feedback, please raise an [github issue](https://github.com/srujankothuri/LegalSmart-Chatbot/issues)
+
+For feedback or questions, open an issue:
+
+- https://github.com/srujankothuri/LegalSmart-Chatbot/issues
