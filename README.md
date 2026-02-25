@@ -14,26 +14,6 @@ This project is part of our published research work:
 
 - **Springer (book chapter):** https://link.springer.com/chapter/10.1007/978-3-032-12827-0_7
 
-## Repository Description (for GitHub)
-
-> A RAG-based legal assistant for Indian law that uses FAISS retrieval over IPC, BNS, and Constitution documents to generate grounded answers via Streamlit + LangChain.
-
-## Suggested GitHub Topics
-
-Use these topics in your repository settings to improve discoverability:
-
-- `rag`
-- `legal-ai`
-- `chatbot`
-- `streamlit`
-- `langchain`
-- `faiss`
-- `llm`
-- `retrieval-augmented-generation`
-- `indian-law`
-- `together-ai`
-- `huggingface`
-- `python`
 
 ## Features
 
